@@ -8,16 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="container">
         <h1 class="coming-soon">COMING <span>SOON</span></h1>
         <p class="stay-tuned">stay tuned</p>
         <p class="description">Your Desired <span>Movie or webseries</span> coming soon...</p>
         <p class="delay">It delays due to some <span>technical issues</span></p>
+
         <div class="music-toggle">
-            <button id="music-toggle">🔊 Play Music</button>
+            <button id="music-btn">Music On</button>
         </div>
-        <audio id="background-music" src="Music/Sayfalse – AL NACER!.mp3" loop autoplay></audio> <!-- Replace with your music file -->
     </div>
+
+    <audio id="bg-music" loop>
+        <source src="Music/Sayfalse – AL NACER!.mp3" type="audio/mp3">
+    </audio>
+
     <script src="script.js"></script>
 </body>
 </html>
