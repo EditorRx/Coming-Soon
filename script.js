@@ -1,40 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const musicToggle = document.getElementById('music-toggle');
-    const backgroundMusic = document.getElementById('background-music');
-    let isPlaying = false;
+const musicBtn = document.getElementById('music-btn');
+const backgroundMusic = document.getElementById('bg-music');
+const container = document.querySelector('.container');
 
-    // Function to toggle music
-    function toggleMusic() {
-        if (!isPlaying) {
-            backgroundMusic.play().catch(error => {
-                console.log("Autoplay blocked. Tap the page to start music.", error);
-            });
-            musicToggle.textContent = "🔇 Pause Music";
-            isPlaying = true;
-        } else {
-            backgroundMusic.pause();
-            musicToggle.textContent = "🔊 Play Music";
-            isPlaying = false;
-        }
-    }
+let isPlaying = false;
 
-    // Attempt to play music immediately
-    backgroundMusic.play().then(() => {
+musicBtn.addEventListener('click', () => {
+    if (!isPlaying) {
+        backgroundMusic.play();
+        musicBtn.textContent = "Music Off";
+        container.classList.add('music-playing');
         isPlaying = true;
-        musicToggle.textContent = "🔇 Pause Music";
-    }).catch(() => {
-        // Autoplay blocked — wait for first click
-        document.body.addEventListener('click', () => {
-            if (!isPlaying) toggleMusic();
-        }, { once: true });
-    });
-
-    // Toggle music on button click
-    musicToggle.addEventListener('click', toggleMusic);
-
-    // Ensure music loops
-    backgroundMusic.addEventListener('ended', () => {
-        backgroundMusic.currentTime = 0;
-        if (isPlaying) backgroundMusic.play();
-    });
+    } else {
+        backgroundMusic.pause();
+        musicBtn.textContent = "Music On";
+        container.classList.remove('music-playing');
+        isPlaying = false;
+    }
 });
