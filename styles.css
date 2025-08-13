@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(45deg, #00b7eb, #ff0000, #ffff00,  #800080, #00b7eb);
+    background-size: 400%;
+    animation: gradient-shift 15s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+}
+
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 4px solid #00b7eb;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00b7eb, 0 0 30px #ff0000;
+    position: relative;
+    z-index: 1;
+}
+
+.coming-soon {
+    font-size: 4rem;
+    margin: 0;
+    text-transform: uppercase;
+    animation: wave 4s ease-in-out infinite;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #00b7eb;
+}
+
+.coming-soon span {
+    font-size: 2rem;
+    color: #ff0000;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+}
+
+@keyframes wave {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.stay-tuned {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    text-shadow: 0 0 5px #fff, 0 0 10px #00b7eb;
+}
+
+.description {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-shadow: 0 0 5px #fff, 0 0 10px #00b7eb;
+}
+
+.description span {
+    color: #b319ff;
+    text-shadow: 0 0 5px #b319ff;
+}
+
+.delay {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-shadow: 0 0 5px #fff, 0 0 10px #00b7eb;
+}
+
+.delay span {
+    color: #b319ff;
+    text-shadow: 0 0 5px #b319ff;
+}
+
+.music-toggle {
+    margin-top: 20px;
+}
+
+.music-toggle button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #24243e;
+    color: #00fff7;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00fff7;
+    transition: all 0.3s;
+}
+
+.music-toggle button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00fff7;
+}
+
+@media (max-width: 600px) {
+    .coming-soon { font-size: 3rem; }
+    .coming-soon span { font-size: 1.5rem; }
+    .stay-tuned, .description, .delay { font-size: 1rem; }
+}
